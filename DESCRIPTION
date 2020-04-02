@@ -1,0 +1,14 @@
+Package: TENETR.data
+Title: Data for the TENETR package
+Version: 0.0.0.9000
+Authors@R: 
+    person(given= "Daniel", 
+           family= "Mullen", 
+           role = c("aut","cre"), 
+           email = "dmullen@usc.edu") 
+Description: Package contains supplementary data for the TENETR package. It includes reference datasets including the .gtf of information for GENCODE v22 (gencode_v22_gtf), annotations for the Infinium Human Methylation 450K BeadChip probes from Zhou W et al. 2017 http://zwdzwd.github.io/InfiniumAnnotation (hm450_hg38_manifest), and a GenomicRanges object containing consensus enhancer regions for human cell lines+tissues from ChrommHMM annotations - https://egg2.wustl.edu/roadmap/web_portal/chr_state_learning.html#exp_18state and PrESSTo Pre-defined enhancer tracks - http://enhancer.binf.ku.dk/presets/ (consensus_enhancer_regions)
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: 
+RoxygenNote: 6.1.1
