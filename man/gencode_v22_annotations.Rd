@@ -11,36 +11,36 @@
   \item{\code{end}}{integer 1-based end location of genes}
   \item{\code{width}}{integer Total width of the region}
   \item{\code{strand}}{character Strand the region is contained on}
-  \item{\code{source}}{character Havana or Ensembl annotation}
-  \item{\code{type}}{character type of construct defined by the region}
-  \item{\code{score}}{character NA}
-  \item{\code{phase}}{integer NA}
-  \item{\code{gene_id}}{character ENSG# ID followed by a single digit after a period}
-  \item{\code{gene_type}}{character COLUMN_DESCRIPTION}
-  \item{\code{gene_status}}{character COLUMN_DESCRIPTION}
-  \item{\code{gene_name}}{character COLUMN_DESCRIPTION}
-  \item{\code{level}}{character COLUMN_DESCRIPTION}
-  \item{\code{havana_gene}}{character COLUMN_DESCRIPTION}
-  \item{\code{transcript_id}}{character COLUMN_DESCRIPTION}
-  \item{\code{transcript_type}}{character COLUMN_DESCRIPTION}
-  \item{\code{transcript_status}}{character COLUMN_DESCRIPTION}
-  \item{\code{transcript_name}}{character COLUMN_DESCRIPTION}
-  \item{\code{tag}}{character COLUMN_DESCRIPTION}
-  \item{\code{transcript_support_level}}{character COLUMN_DESCRIPTION}
-  \item{\code{havana_transcript}}{character COLUMN_DESCRIPTION}
-  \item{\code{exon_number}}{character COLUMN_DESCRIPTION}
-  \item{\code{exon_id}}{character COLUMN_DESCRIPTION}
-  \item{\code{ont}}{character COLUMN_DESCRIPTION}
-  \item{\code{protein_id}}{character COLUMN_DESCRIPTION}
-  \item{\code{ccdsid}}{character COLUMN_DESCRIPTION} 
+  \item{\code{source}}{character Name of the program that generated this feature, or the data source (HAVANA, ENSEMBL)}
+  \item{\code{type}}{character Type of feature defined by the region (gene,transcript,exon,CDS,UTR,start_codon,stop_codon,Selenocysteine)}
+  \item{\code{score}}{character Placeholder for score information (not used for this type of data)}
+  \item{\code{phase}}{integer Genomic phase (for CDS features only)}
+  \item{\code{gene_id}}{character Ensembl gene ID (ENSG########### followed by a single digit after a period indicating gene version number)}
+  \item{\code{gene_type}}{character Gene biotype (see: https://www.gencodegenes.org/pages/biotypes.html)}
+  \item{\code{gene_status}}{character Status of the gene (KNOWN, NOVEL, PUTATIVE)}
+  \item{\code{gene_name}}{character Name of the gene}
+  \item{\code{level}}{character Gene level for verification of the loci (1: verified loci, 2: manually annotated loci, 3: automatically annotated loci)}
+  \item{\code{havana_gene}}{character Gene ID in the Havana database (OTTHUMGXXXXXXXXXXX.X)}
+  \item{\code{transcript_id}}{character Ensembl transcript ID (ENST########### followed by a single digit after a period indicating transcript version number)}
+  \item{\code{transcript_type}}{character Transcript biotype (see: https://www.gencodegenes.org/pages/biotypes.html)}
+  \item{\code{transcript_status}}{character Status of the transcript (KNOWN, NOVEL, PUTATIVE)}
+  \item{\code{transcript_name}}{character Name of the transcript (Gene name with number of transcript appended)}
+  \item{\code{tag}}{character Notes special elements of interest(see: https://www.gencodegenes.org/pages/tags.html)}
+  \item{\code{transcript_support_level}}{character Transcripts score according to how well mRNA and EST alignments match over its full length (1: all splice junctions of the transcript are supported by at least one non-suspect mRNA, 2: the best supporting mRNA is flagged as suspect or the support is from multiple ESTs, 3: the only support is from a single EST, 4: the best supporting EST is flagged as suspect, 5: no single transcript supports the model structure, NA: the transcript was not analyzed)}
+  \item{\code{havana_transcript}}{character Transcript ID in the Havana database (OTTHUMGXXXXXXXXXXX.X)}
+  \item{\code{exon_number}}{character For exons, lists the number of that exon in the given gene}
+  \item{\code{exon_id}}{character Ensembl exon ID (ENSE########### followed by a single digit after a period indicating exon version number)}
+  \item{\code{ont}}{character pseudogene (or other) ontology ids (PGO:XXXXXXX and others)}
+  \item{\code{protein_id}}{character Ensembl protein ID (ENSP########### followed by a single digit after a period indicating protein version number}
+  \item{\code{ccdsid}}{character official CCDS protein ID (CCDS#####.#)} 
 }}
 \source{
-\url{http://somewhere.important.com/}
+\url{https://www.gencodegenes.org/human/release_22.html}
 }
 \usage{
 gencode_v22_annotations
 }
 \description{
-A dataset containing information for the GENCODE v22 (GRCh38.p2) .gtf file
+A dataset containing information for the GENCODE v22 (GRCh38.p2) .gtf file loaded using tracklayer's import function
 }
 \keyword{datasets}

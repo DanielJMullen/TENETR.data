@@ -36,8 +36,50 @@ hm450_hg38_annotations <- read.delim(
 ## Redefine class of the probeEnd variable:
 hm450_hg38_annotations$probeEnd <- as.integer(hm450_hg38_annotations$probeEnd)
 
-## Set the start locations to be 1-indexed:
-hm450_hg38_annotations$CpG_beg <- as.integer(hm450_hg38_annotations$CpG_beg+1)
+## Get the true locations of the probes (initial columns represent 3 bases):
+## Two key pieces of info to find CpG location: Probe type and probe
+## "strand".
+hm450_hg38_annotations$CpG_beg_TRUE <- as.integer(
+  ifelse(
+    hm450_hg38_annotations$probe_strand=='+',
+    ifelse(
+      hm450_hg38_annotations$designType=='I',
+      hm450_hg38_annotations$probeEnd-1,
+      hm450_hg38_annotations$probeEnd
+    ),
+    ifelse(
+      hm450_hg38_annotations$designType=='I',
+      hm450_hg38_annotations$probeBeg,
+      hm450_hg38_annotations$probeBeg-1
+    )
+  )
+)
+
+hm450_hg38_annotations$CpG_end_TRUE <- as.integer(
+  ifelse(
+    hm450_hg38_annotations$probe_strand=='+',
+    ifelse(
+      hm450_hg38_annotations$designType=='I',
+      hm450_hg38_annotations$probeEnd,
+      hm450_hg38_annotations$probeEnd+1
+    ),
+    ifelse(
+      hm450_hg38_annotations$designType=='I',
+      hm450_hg38_annotations$probeBeg+1,
+      hm450_hg38_annotations$probeBeg
+    )
+  )
+)
+
+## Move the new colunmns up in the order:
+hm450_hg38_annotations <- hm450_hg38_annotations[
+  ,
+  c(
+    1:3,
+    c(ncol(hm450_hg38_annotations)-1,ncol(hm450_hg38_annotations)),
+    c(4:(ncol(hm450_hg38_annotations)-2))
+  )
+]
 
 ## Clear workspace:
 rm(file_url)

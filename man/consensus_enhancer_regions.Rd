@@ -3,7 +3,7 @@
 \docType{data}
 \name{consensus_enhancer_regions}
 \alias{consensus_enhancer_regions}
-\title{Multiple cell type consensus enhancer region dataset}
+\title{Consensus enhancer region dataset}
 \format{A data frame with 393892 rows and 4 variables:
 \describe{
   \item{\code{chromosome}}{character Chromosome location of peaks}
@@ -12,12 +12,12 @@
   \item{\code{strand}}{integer Placeholder for strand information} 
 }}
 \source{
-\url{https://egg2.wustl.edu/roadmap/data/byFileType/chromhmmSegmentations/ChmmModels/core_K27ac/jointModel/final/bed_hg38_lifted_over/ https://egg2.wustl.edu/roadmap/web_portal/chr_state_learning.html#exp_18state}
+\url{https://egg2.wustl.edu/roadmap/web_portal/chr_state_learning.html http://enhancer.binf.ku.dk/presets/}
 }
 \usage{
 consensus_enhancer_regions
 }
 \description{
-A dataset containing consensus enhancer regions for numerous cell types. Based on chromHMM annotations and eRNA datasets.
+A dataset containing consensus enhancer regions for numerous cell types. Based on 18-state chromHMM annotations from 98 cell types and 112 eRNA datasets.
 }
 \keyword{datasets}
