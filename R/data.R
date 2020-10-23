@@ -9,17 +9,6 @@
 #'}
 #' @source \url{https://egg2.wustl.edu/roadmap/web_portal/chr_state_learning.html http://enhancer.binf.ku.dk/presets/}
 "consensus_enhancer_regions"
-#' @title Consensus open chromatin regions dataset
-#' @description A dataset containing a master track of DNaseI hypersensitive sites from 125 seperate cell types from ENCODE lifted from the hg19 to the hg38 human genome. 
-#' @format A data frame with 2892942 rows and 4 variables:
-#' \describe{
-#'   \item{\code{chromosome}}{character Chromosome location of peaks}
-#'   \item{\code{start}}{integer 1-based start location of peaks}
-#'   \item{\code{end}}{integer 1-based end location of peaks}
-#'   \item{\code{strand}}{integer Placeholder for strand information} 
-#'}
-#' @source \url{http://genome.ucsc.edu/cgi-bin/hgTrackUi?db=hg19&g=wgEncodeAwgDnaseMasterSites}
-"consensus_open_chromatin_regions"
 #' @title GENCODE v22 .gtf file
 #' @description A dataset containing information for the GENCODE v22 (GRCh38.p2) .gtf file loaded using tracklayer's import function
 #' @format A data frame with 2563671 rows and 27 variables:
@@ -120,3 +109,14 @@
 #'}
 #' @source \url{http://zwdzwd.github.io/InfiniumAnnotation}
 "hm450_hg38_annotations"
+#' @title Consensus open chromatin regions dataset
+#' @description A dataset containing a master track of DNaseI hypersensitive sites from 125 seperate cell types from ENCODE lifted from the hg19 to the hg38 human genome. 
+#' @format A data frame with 2892942 rows and 4 variables:
+#' \describe{
+#'   \item{\code{chromosome}}{character Chromosome location of peaks}
+#'   \item{\code{start}}{integer 1-based start location of peaks}
+#'   \item{\code{end}}{integer 1-based end location of peaks}
+#'   \item{\code{strand}}{integer Placeholder for strand information} 
+#'}
+#' @source \url{http://genome.ucsc.edu/cgi-bin/hgTrackUi?db=hg19&g=wgEncodeAwgDnaseMasterSites}
+"consensus_open_chromatin_regions"
