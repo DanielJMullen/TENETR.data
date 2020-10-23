@@ -8,7 +8,7 @@
 ## Basic hg38 annotation with suggested overall masking (MASK_general column) - hm450
 
 ## Get url for the manifest file:
-file_url <- 'http://zwdzwd.io/InfiniumAnnotation/current/hm450/hm450.hg38.manifest.tsv.gz'
+file_url <- 'http://zwdzwd.io/InfiniumAnnotation/current/HM450/HM450.hg38.manifest.tsv.gz'
 
 ## Define location of the manifest file in the data-raw folder:
 manifest_file_location <- paste(
