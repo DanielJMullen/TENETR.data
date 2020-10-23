@@ -1,19 +1,6 @@
 #' @title DATASET_TITLE
 #' @description DATASET_DESCRIPTION
 #' @docType data
-#' @usage data(consensus_open_chromatin_regions)
-#' @format A data frame with 2892942 rows and 4 variables:
-#' \describe{
-#'   \item{\code{chromosome}}{character COLUMN_DESCRIPTION}
-#'   \item{\code{start}}{integer COLUMN_DESCRIPTION}
-#'   \item{\code{end}}{integer COLUMN_DESCRIPTION}
-#'   \item{\code{strand}}{integer COLUMN_DESCRIPTION} 
-#'}
-#' @source \url{http://somewhere.important.com/}
-"consensus_open_chromatin_regions"
-#' @title DATASET_TITLE
-#' @description DATASET_DESCRIPTION
-#' @docType data
 #' @usage data(consensus_enhancer_regions)
 #' @format A data frame with 406154 rows and 4 variables:
 #' \describe{
@@ -24,6 +11,19 @@
 #'}
 #' @source \url{http://somewhere.important.com/}
 "consensus_enhancer_regions"
+#' @title DATASET_TITLE
+#' @description DATASET_DESCRIPTION
+#' @docType data
+#' @usage data(consensus_open_chromatin_regions)
+#' @format A data frame with 2892942 rows and 4 variables:
+#' \describe{
+#'   \item{\code{chromosome}}{character COLUMN_DESCRIPTION}
+#'   \item{\code{start}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{end}}{integer COLUMN_DESCRIPTION}
+#'   \item{\code{strand}}{integer COLUMN_DESCRIPTION} 
+#'}
+#' @source \url{http://somewhere.important.com/}
+"consensus_open_chromatin_regions"
 #' @title DATASET_TITLE
 #' @description DATASET_DESCRIPTION
 #' @docType data
