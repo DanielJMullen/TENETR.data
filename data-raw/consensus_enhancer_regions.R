@@ -244,7 +244,7 @@ colnames(enhancer_peaks_df) <- c(
 enhancer_peaks_granges <- GenomicRanges::makeGRangesFromDataFrame(
   df= enhancer_peaks_df,
   keep.extra.columns = FALSE,
-  starts.in.df.are.0based = TRUE
+  starts.in.df.are.0based = FALSE
 )
 
 ## Reduce the enhancer peak granges:
