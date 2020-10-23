@@ -1,5 +1,7 @@
 #' @title DATASET_TITLE
 #' @description DATASET_DESCRIPTION
+#' @docType data
+#' @usage data(consensus_open_chromatin_regions)
 #' @format A data frame with 2892942 rows and 4 variables:
 #' \describe{
 #'   \item{\code{chromosome}}{character COLUMN_DESCRIPTION}
@@ -11,6 +13,8 @@
 "consensus_open_chromatin_regions"
 #' @title DATASET_TITLE
 #' @description DATASET_DESCRIPTION
+#' @docType data
+#' @usage data(consensus_enhancer_regions)
 #' @format A data frame with 406154 rows and 4 variables:
 #' \describe{
 #'   \item{\code{chromosome}}{character COLUMN_DESCRIPTION}
@@ -22,6 +26,8 @@
 "consensus_enhancer_regions"
 #' @title DATASET_TITLE
 #' @description DATASET_DESCRIPTION
+#' @docType data
+#' @usage data(gencode_v22_annotations)
 #' @format A data frame with 2563671 rows and 27 variables:
 #' \describe{
 #'   \item{\code{seqnames}}{character COLUMN_DESCRIPTION}
@@ -56,6 +62,8 @@
 "gencode_v22_annotations"
 #' @title DATASET_TITLE
 #' @description DATASET_DESCRIPTION
+#' @docType data
+#' @usage data(hm450_hg38_annotations)
 #' @format A data frame with 485577 rows and 59 variables:
 #' \describe{
 #'   \item{\code{CpG_chrm}}{character COLUMN_DESCRIPTION}
