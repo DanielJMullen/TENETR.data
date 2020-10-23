@@ -4,7 +4,8 @@
 \name{hm450_hg38_annotations}
 \alias{hm450_hg38_annotations}
 \title{HumanMethylation450 BeadChip Array hg38 annotations}
-\format{A data frame with 485577 rows and 59 variables:
+\format{
+A data frame with 485577 rows and 59 variables:
 \describe{
   \item{\code{CpG_chrm}}{character Chromosome location of target CpG}
   \item{\code{CpG_beg}}{integer 1-based start location of target CpG}
@@ -65,7 +66,8 @@
   \item{\code{MASK_snp5_GMAF1p}}{logical Whether 5bp 3'-subsequence (including extension for typeII) overlap with any of the SNPs (with global MAF >1 percent)}
   \item{\code{MASK_extBase}}{logical Probes masked for extension base inconsistent with specified color channel (type-I) or CpG (type-II) based on mapping}
   \item{\code{MASK_general}}{logical Recommended general purpose masking merged from "MASK.sub30.copy", "MASK.mapping", "MASK.extBase", "MASK.typeINextBaseSwitch" and "MASK.snp5.GMAF1p"} 
-}}
+}
+}
 \source{
 \url{http://zwdzwd.github.io/InfiniumAnnotation}
 }

@@ -4,7 +4,8 @@
 \name{gencode_v22_annotations}
 \alias{gencode_v22_annotations}
 \title{GENCODE v22 .gtf file}
-\format{A data frame with 2563671 rows and 27 variables:
+\format{
+A data frame with 2563671 rows and 27 variables:
 \describe{
   \item{\code{seqnames}}{character Chromosome location of genes}
   \item{\code{start}}{integer 1-based start location of genes}
@@ -33,7 +34,8 @@
   \item{\code{ont}}{character pseudogene (or other) ontology ids (PGO:XXXXXXX and others)}
   \item{\code{protein_id}}{character Ensembl protein ID (ENSP########### followed by a single digit after a period indicating protein version number}
   \item{\code{ccdsid}}{character official CCDS protein ID (CCDS#####.#)} 
-}}
+}
+}
 \source{
 \url{https://www.gencodegenes.org/human/release_22.html}
 }
