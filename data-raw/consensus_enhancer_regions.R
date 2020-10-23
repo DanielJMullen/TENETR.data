@@ -44,8 +44,6 @@ chromHMM_of_interest <- c(
   '10_EnhA2'
 )
 
-i <- mnemonics_urls[1]
-
 ## Assemble a data frame of peaks of interest:
 for(i in mnemonics_urls){
 
@@ -262,8 +260,6 @@ consensus_enhancer_regions <- data.frame(
   'strand'= GenomicRanges::strand(consensus_enhancer_regions),
   stringsAsFactors = FALSE
 )
-
-## Set the start positions to be 1 indexed instead of 0:
 
 ## Remove unnecessary datasets:
 rm(
