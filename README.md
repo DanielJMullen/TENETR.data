@@ -21,3 +21,4 @@ devtools::install_github('DanielJMullen/TENETR.data')
 
 ```
 
+Note: Installation of TENETR.data can up to a few minutes to install
