@@ -136,3 +136,67 @@
 #'}
 #' @source \url{http://genome.ucsc.edu/cgi-bin/hgTrackUi?db=hg19&g=wgEncodeAwgDnaseMasterSites}
 "consensus_open_chromatin_regions"
+#' @title The human transcription factors dataset 
+#' 
+#' @description This file contains the official list of human TFs from Lambert et al (PMID:29425488), along with all associated information.  Candidate proteins were manually examined by a panel of experts based on available data.  Proteins with experimentally demonstrated DNA binding specificity were considered TFs.  Other proteins, such as co-factors and RNA binding proteins, were classified as non-TFs.  All proteins (both TFs and non-TFs) are contained in the database, along with the associated evidence. See: Lambert SA, et al. (2018) The Human Transcription Factors. Cell. 172(4):650-665. doi: 10.1016/j.cell.2018.01.029. Review.
+#' 
+#' @docType data
+#' 
+#' @format A data frame with 2765 rows and 28 variables:
+#' \describe{
+#'   \item{\code{Ensembl.ID}}{character Official Ensembl gene ID.}
+#'   \item{\code{HGNC.symbol}}{character Official gene name.}
+#'   \item{\code{DBD}}{character DNA binding domains contained in the protein(s).}
+#'   \item{\code{Is.TF.}}{character Is the protein a TF (i.e., does it bind DNA specifically?) (Yes/No).}
+#'   \item{\code{TF.assessment}}{character Assessment of binding activity: \cr
+#'   	"Known motif" = A DNA motif is currently available. \cr
+#'   	"Likely to be sequence specific" = No motif available, but evidence for DNA binding. \cr
+#'   	"ssDNA/RNA binding" = Likely to be a single-stranded DNA or RNA binding protein. \cr
+#'   	"Unlikely to be sequence specific" = Lack of strong evidence for sequence-specific DNA binding. \cr
+#'	}
+#'   \item{\code{Binding.mode}}{character Mode of interacting with DNA: \cr
+#'   	"Monomer or Homomultimer" = Binds DNA as a monomer, homodimer, homotrimer, etc. Some of these can also bind as heteromers. Proteins were classified in this category if they are capable of binding DNA without the aid of other proteins. \cr
+#'   	"Obligate heteromer" = Can only bind as a heteromer. \cr
+#'   	"Low specificity DNA binding" = Binds DNA with little or no sequence specificity. \cr
+#'   	"Not a DNA binding protein" = You guessed it. \cr
+#'   	}
+#'   \item{\code{Motif.status}}{character Current status of motif availability: \cr
+#'   	"High throughput in vitro" = In vitro-derived motif (e.g. PBM, HT-SELEX, B1H) available. \cr
+#'   	"100 perc ID - in vitro" = In vitro-derived motif available for another TF with an  identical DNA binding domain amino acid sequence. (So, the motif is essentially available). \cr
+#'   	"In vivo/Misc source" = Motif is only available from an in vivo (e.g. ChIP-seq) or low-throughput (e.g., SELEX) source. \cr
+#'   	"No motif" = you guessed it again. \cr
+#'   	}
+#'   \item{\code{Final.Notes}}{character Final notes, automatically generated.  So, this column uses a controlled vocabulary, suitable for automated classification/analysis.}
+#'   \item{\code{Final.Comments}}{character Final comments, manually entered.  Summary comments combined and curated from the original reviewer comments.  So, this is all free text, human-readable only.}
+#'   \item{\code{Interpro.ID.s.}}{character Interpro IDs for DBDs (semicolon-delimited).}
+#'   \item{\code{EntrezGene.ID}}{character Entrez Gene ID, when available.}
+#'   \item{\code{EntrezGene.Description}}{character Entrez Gene Description, when available.}
+#'   \item{\code{PDB.ID}}{character Protein Data Bank ID (for structures of the protein or DBD in complex with DNA), when available.}
+#'   \item{\code{TF.tested.by.HT.SELEX.}}{character Has the protein been tested for DNA binding in a HT-SELEX assay in the Taipale lab? \cr
+#'   	"DBD" = Tested using a construct with the DBD only \cr
+#'   	"Full" = Tested using a construct with the full-length protein \cr
+#'   	"not tested" = You guessed it yet again \cr
+#'   	}
+#'   \item{\code{TF.tested.by.PBM.}}{character Has the protein been tested for DNA binding in a PBM assay?}
+#'   \item{\code{Conditional.Binding.Requirements}}{character Notes on requirements for binding (e.g., requires post-translational modifications).  Note - this column is not comprehensive!}
+#'   \item{\code{Original.Comments}}{character Original comments provided by the primary reviewer of the protein.}
+#'   \item{\code{Vaquerizas.2009.classification}}{character Classification provided by the Vaquerizas 2009 paper: \cr
+#'   	"a" = Has direct evidence of TF function. \cr
+#'   	"b" = Has evidence for an orthologous TF. \cr
+#'   	"c" = Contains likely DBDs, but has no functional evidence. \cr
+#'   	"x" = Is an unlikely TF such as predicted gene, genes with likely non-specific DBDs or that have function outside transcription. \cr
+#'   	"other" =  Protein that lacks clear DBDs that was curated from external sources. \cr
+#'   	}
+#'   \item{\code{CisBP.considers.it.a.TF.}}{character Is the protein available in the CisBP database (build 1.02)?}
+#'   \item{\code{TFCat.classification}}{character Does the TFCat web site classify the protein as a TF?}
+#'   \item{\code{Is.a.GO.TF.}}{character Does GO (Gene Ontology) classify the protein as a TF?}
+#'   \item{\code{Initial.assessment}}{character Initial assessment provided by curators.}
+#'   \item{\code{Curator.1}}{character Name of curator 1.}
+#'   \item{\code{Curator.2}}{character Name of curator 2.}
+#'   \item{\code{TFclass.considers.it.a.TF.}}{character Does TFclass consider the protein to be a TF?}
+#'   \item{\code{Go.Evidence}}{character Evidence from GO supporting this protein being a TF.}
+#'   \item{\code{Pfam.Domains..By.ENSP.ID.}}{character List of Pfam Domains contained in the protein.  Format ('#'-delimited): Ensembl Protein ID, Ensembl Gene ID, Ensembl Transcript ID, Pfam domains.}
+#'   \item{\code{Is.C2H2.ZF.KRAB..}}{logical Data pending from authors} 
+#'}
+#' @source \url{http://humantfs.ccbr.utoronto.ca/download.php}
+"human_transcription_factors_dataset"
