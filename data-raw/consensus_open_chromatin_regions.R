@@ -59,7 +59,7 @@ download.file(
 )
 
 ## Uncompress the chain file:
-system("gzip -d ./data-raw/hg19.hg38.chain.gz")
+R.utils::gunzip("./data-raw/hg19.hg38.chain.gz")
 
 ## Import the chain file:
 chain <- rtracklayer::import.chain("./data-raw/hg19.hg38.chain")

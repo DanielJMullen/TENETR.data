@@ -200,29 +200,106 @@ eRNA_bed_file_paths <- list.files(
 ## Assemble a data frame of peaks of interest:
 for(i in eRNA_bed_file_paths){
 
-  ## Load the eRNA bed file:
-  raw_bed_df <- read.delim(
-    i,
-    header= FALSE,
-    stringsAsFactors = FALSE
-  )
+  ## If a dataframe of the eRNA enhancer peaks hasn't been created:
+  if(!exists("eRNA_enhancer_peaks_df")){
 
-  ## Get just the chromosome, start, and end columns
-  columns_of_interest_bed_df <- raw_bed_df[
-    ,
-    c(1:3)
+    ## Load the eRNA bed file:
+    raw_bed_df <- read.delim(
+      i,
+      header= FALSE,
+      stringsAsFactors = FALSE
+    )
+
+    ## Get just the chromosome, start, and end columns
+    columns_of_interest_bed_df <- raw_bed_df[
+      ,
+      c(1:3)
+      ]
+
+    ## Set start to be 1 indexed:
+    columns_of_interest_bed_df$V2 <- columns_of_interest_bed_df$V2+1
+
+    ## Set this file to be the eRNA_enhancer_peaks_df:
+    eRNA_enhancer_peaks_df <- columns_of_interest_bed_df
+
+  ## If the dataset does already exist, add the new files to it:
+  } else if(exists("enhancer_peaks_df")){
+
+    ## Load the eRNA bed file:
+    raw_bed_df <- read.delim(
+      i,
+      header= FALSE,
+      stringsAsFactors = FALSE
+    )
+
+    ## Get just the chromosome, start, and end columns
+    columns_of_interest_bed_df <- raw_bed_df[
+      ,
+      c(1:3)
     ]
 
-  ## Set start to be 1 indexed:
-  columns_of_interest_bed_df$V2 <- columns_of_interest_bed_df$V2+1
+    ## Set start to be 1 indexed:
+    columns_of_interest_bed_df$V2 <- columns_of_interest_bed_df$V2+1
 
-  ## Combine those regions with the existing enhancer
-  ## bed file:
-  enhancer_peaks_df <- rbind(
-    enhancer_peaks_df,
-    columns_of_interest_bed_df
-  )
+    ## Bind these columns to the existing dataset:
+    eRNA_enhancer_peaks_df <- rbind(
+      eRNA_enhancer_peaks_df,
+      columns_of_interest_bed_df
+    )
+  }
 }
+
+## Set the column naes of the new eRNA dataframe:
+colnames(eRNA_enhancer_peaks_df) <- c(
+  'chromosome',
+  'start',
+  'end'
+)
+
+## Convert the eRNA dataframe into a granges object:
+eRNA_enhancer_peaks_granges <- GenomicRanges::makeGRangesFromDataFrame(
+  df= eRNA_enhancer_peaks_df,
+  keep.extra.columns = FALSE,
+  starts.in.df.are.0based = FALSE
+)
+
+## Download the hg19 to hg38 chain:
+download.file(
+  "http://hgdownload.cse.ucsc.edu/goldenpath/hg19/liftOver/hg19ToHg38.over.chain.gz",
+  "./data-raw/hg19.hg38.chain.gz"
+)
+
+## Uncompress the chain file:
+R.utils::gunzip("./data-raw/hg19.hg38.chain.gz")
+
+## Import the chain file:
+chain <- rtracklayer::import.chain("./data-raw/hg19.hg38.chain")
+
+## Perform the liftover of the open chromatin peaks to hg38:
+eRNA_enhancer_peaks_granges_hg38 <- rtracklayer::liftOver(
+  eRNA_enhancer_peaks_granges,
+  chain
+)
+
+## Convert the granges list object to a normal granges object:
+eRNA_enhancer_peaks_granges_hg38_granges <- unlist(eRNA_enhancer_peaks_granges_hg38)
+
+## Convert the liftover granges back into a dataframe:
+eRNA_enhancer_peaks_df <- data.frame(
+  'chromosome'= as.character(
+    GenomicRanges::seqnames(eRNA_enhancer_peaks_granges_hg38_granges)
+  ),
+  'start'= GenomicRanges::start(eRNA_enhancer_peaks_granges_hg38_granges),
+  'end'= GenomicRanges::end(eRNA_enhancer_peaks_granges_hg38_granges),
+  'strand'= GenomicRanges::strand(eRNA_enhancer_peaks_granges_hg38_granges),
+  stringsAsFactors = FALSE
+)
+
+## Combine the eRNA enhancer peaks with the previous enhancer peak dataset:
+enhancer_peaks_df <- rbind(
+  enhancer_peaks_df,
+  eRNA_enhancer_peaks_df
+)
 
 ## Add a dummy strand column with values equal to
 ## '*'
@@ -263,16 +340,10 @@ consensus_enhancer_regions <- data.frame(
 
 ## Remove unnecessary datasets:
 rm(
-  columns_of_interest_bed_df,
-  enhancer_peaks_df,
-  raw_bed_df,
-  i,
-  chromHMM_of_interest,
-  eRNA_bed_file_paths,
-  enhancer_peaks_granges,
-  eRNA_file_location,
-  eRNA_file_location_untar,
-  eRNA_file_url
+  list=setdiff(
+    ls(),
+    "consensus_enhancer_regions"
+  )
 )
 
 ## Prepare the dataset:
