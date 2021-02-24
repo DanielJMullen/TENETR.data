@@ -200,3 +200,14 @@
 #'}
 #' @source \url{http://humantfs.ccbr.utoronto.ca/download.php}
 "human_transcription_factors_dataset"
+#' @title hg38_chrom_sizes
+#'
+#' @description A dataset of chromosome and scaffold sizes for the hg38 build of the human genome
+#'
+#' @format A data frame with 455 rows and 2 variables:
+#' \describe{
+#'   \item{\code{chromosome}}{character Chromosome and scaffold names.}
+#'   \item{\code{size}}{integer Size of each chromosome and scaffold in base pairs} 
+#'}
+#' @source \url{http://hgdownload.cse.ucsc.edu/goldenpath/hg38/bigZips/}
+"hg38_chrom_sizes"
