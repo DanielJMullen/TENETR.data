@@ -13,8 +13,8 @@ Rhie SK et al. Identification of activated enhancers and linked transcription fa
 ##### Installation is best performed using devtools R package (https://www.r-project.org/nosvn/pandoc/devtools.html)
 
 ```diff
-if (!require("ggplot2", quietly = TRUE)){
-  install.packages('ggplot2')
+if (!require("devtools", quietly = TRUE)){
+  install.packages('devtools')
 }
 
 devtools::install_github('DanielJMullen/TENETR.data')
