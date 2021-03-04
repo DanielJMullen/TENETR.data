@@ -121,6 +121,76 @@
 #'}
 #' @source \url{http://zwdzwd.github.io/InfiniumAnnotation}
 "hm450_hg38_annotations"
+#' @title HumanMethylation27 BeadChip Array hg38 annotations
+#' 
+#' @description Human genome hg38 annotations for probes on the hm27 array from: “Comprehensive characterization, annotation and innovative use of Infinium DNA Methylation BeadChip probes”
+#' 
+#' @docType data
+#' 
+#' @format A data frame with 27578 rows and 59 variables:
+#' \describe{
+#'   \item{\code{CpG_chrm}}{character Chromosome location of target CpG}
+#'   \item{\code{CpG_beg}}{integer 1-based start location of target CpG}
+#'   \item{\code{CpG_end}}{integer 1-based end location of target CpG}
+#'   \item{\code{CpG_beg_TRUE}}{integer 1-based start location of target CpG dinucleotide}
+#'   \item{\code{CpG_end_TRUE}}{integer 1-based end location of target CpG dinucleotide}
+#'   \item{\code{probe_strand}}{character Indicates orientation of probe relative to target CpG (consistent with orientation column)}
+#'   \item{\code{probeID}}{character Address of the probe in form: 'cg########'}
+#'   \item{\code{address_A}}{integer Address of probe A on the chip designated by the original manifest}
+#'   \item{\code{address_B}}{integer Address of probe B on the chip designated by the original manifest}
+#'   \item{\code{channel}}{character Listing of channel type for probe ("Both" for type II probes and "Grn"/"Red" for type I probes)}
+#'   \item{\code{designType}}{character Listing of probe design type (either "I" or "II")}
+#'   \item{\code{nextBase}}{character The actual extension base (on the probe strand) after bisulfite conversion ("A" or "C" or "T")}
+#'   \item{\code{nextBaseRef}}{character The extension base (on the hybridized DNA) before bisulfite conversion ("A", "C", "G" or "T")}
+#'   \item{\code{probeType}}{character Type of probe ("cg","ch", or "rs")}
+#'   \item{\code{orientation}}{character Specifies whether the probe is positioned upstream or downstream of target}
+#'   \item{\code{probeCpGcnt}}{integer Number of additional CpGs in the probe (not counting the interrogated CpG)}
+#'   \item{\code{context35}}{integer the number of CpGs in the [-35bp, +35bp] window}
+#'   \item{\code{probeBeg}}{integer Mapped start position of the probe}
+#'   \item{\code{probeEnd}}{integer Mapped end position of the probe}
+#'   \item{\code{ProbeSeq_A}}{character The probe sequence for allele A}
+#'   \item{\code{ProbeSeq_B}}{character The probe sequence for allele B}
+#'   \item{\code{gene}}{character Nearby gene annnotations according to GENCODE v22}
+#'   \item{\code{gene_HGNC}}{character Nearby gene annotations according to GENCODE v22 compatible with HGNC}
+#'   \item{\code{chrm_A}}{character Chromosome location of probe A (excluding decoy chromosomes)}
+#'   \item{\code{beg_A}}{integer Start location of probe A (excluding decoy chromosomes)}
+#'   \item{\code{flag_A}}{integer Flag for mapping of probe A (excluding decoy chromosomes) (0: mapped to forward strand, 4: unmapped, 16: mapped to reverse strand)}
+#'   \item{\code{mapQ_A}}{integer Mapping quality of probe A (excluding decoy chromosomes) (0-60, 60= best quality)}
+#'   \item{\code{cigar_A}}{character Cigar output of probe A (excluding decoy chromosomes)}
+#'   \item{\code{NM_A}}{integer Mismatch count of probe A (excluding decoy chromosomes)}
+#'   \item{\code{chrm_B}}{character Chromosome location of probe B (excluding decoy chromosomes) (excluding decoy chromosomes)}
+#'   \item{\code{beg_B}}{integer Start location of probe B (excluding decoy chromosomes)}
+#'   \item{\code{flag_B}}{integer Flag for mapping of probe B (excluding decoy chromosomes) (0: mapped to forward strand, 4: unmapped, 16: mapped to reverse strand)}
+#'   \item{\code{mapQ_B}}{integer Mapping quality of probe B (excluding decoy chromosomes) (0-60, 60= best quality)}
+#'   \item{\code{cigar_B}}{character Cigar output of probe B (excluding decoy chromosomes)}
+#'   \item{\code{NM_B}}{integer Mismatch count of probe B (excluding decoy chromosomes)}
+#'   \item{\code{wDecoy_chrm_A}}{character Chromosome location of probe A}
+#'   \item{\code{wDecoy_beg_A}}{integer Start location of probe A}
+#'   \item{\code{wDecoy_flag_A}}{integer Flag for mapping of probe A (0: mapped to forward strand, 4: unmapped, 16: mapped to reverse strand)}
+#'   \item{\code{wDecoy_mapQ_A}}{integer Mapping quality of probe A (0-60, 60= best quality)}
+#'   \item{\code{wDecoy_cigar_A}}{character Cigar output of probe A}
+#'   \item{\code{wDecoy_NM_A}}{integer Mismatch count of probe A}
+#'   \item{\code{wDecoy_chrm_B}}{character Chromosome location of probe B}
+#'   \item{\code{wDecoy_beg_B}}{integer Start location of probe B}
+#'   \item{\code{wDecoy_flag_B}}{integer Flag for mapping of probe B (0: mapped to forward strand, 4: unmapped, 16: mapped to reverse strand)}
+#'   \item{\code{wDecoy_mapQ_B}}{integer Mapping quality of probe B (0-60, 60= best quality)}
+#'   \item{\code{wDecoy_cigar_B}}{character Cigar output of probe B}
+#'   \item{\code{wDecoy_NM_B}}{integer Mismatch count of probe B}
+#'   \item{\code{posMatch}}{logical Not applicable to this dataset}
+#'   \item{\code{MASK_mapping}}{logical Whether the probe is masked for mapping reason. Probes retained have high quality (>=40 on 0-60 scale) consistent (with designed MAPINFO) mapping (for both in the case of type I) without INDELs}
+#'   \item{\code{MASK_typeINextBaseSwitch}}{logical Whether the probe has a SNP in the extension base that causes a color channel switch from the official annotation (described as color-channel-switching, or CCS SNP in the reference)}
+#'   \item{\code{MASK_rmsk15}}{logical Whether the 15bp 3'-subsequence of the probe overlap with repeat masker, this MASK is NOT recommended}
+#'   \item{\code{MASK_sub40_copy}}{logical Whether the 40bp 3'-subsequence of the probe is non-unique}
+#'   \item{\code{MASK_sub35_copy}}{logical Whether the 35bp 3'-subsequence of the probe is non-unique}
+#'   \item{\code{MASK_sub30_copy}}{logical Whether the 30bp 3'-subsequence of the probe is non-unique}
+#'   \item{\code{MASK_sub25_copy}}{logical Whether the 25bp 3'-subsequence of the probe is non-unique}
+#'   \item{\code{MASK_snp5_common}}{logical Whether 5bp 3'-subsequence (including extension for typeII) overlap with any of the common SNPs from dbSNP (global MAF can be under 1 percent)}
+#'   \item{\code{MASK_snp5_GMAF1p}}{logical Whether 5bp 3'-subsequence (including extension for typeII) overlap with any of the SNPs (with global MAF >1 percent)}
+#'   \item{\code{MASK_extBase}}{logical Probes masked for extension base inconsistent with specified color channel (type-I) or CpG (type-II) based on mapping}
+#'   \item{\code{MASK_general}}{logical Recommended general purpose masking merged from "MASK.sub30.copy", "MASK.mapping", "MASK.extBase", "MASK.typeINextBaseSwitch" and "MASK.snp5.GMAF1p"} 
+#'}
+#' @source \url{http://zwdzwd.github.io/InfiniumAnnotation}
+"hm27_hg38_annotations"
 #' @title Consensus open chromatin regions dataset
 #' 
 #' @description A dataset containing a master track of DNaseI hypersensitive sites from 125 seperate cell types from ENCODE lifted from the hg19 to the hg38 human genome. 

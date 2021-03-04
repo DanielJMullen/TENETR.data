@@ -1,3 +1,12 @@
+## Code to prepare 'hm27_hg38_annotations' dataset:
+
+## Annotations come from:
+## Zhou W, Laird PW and Shen H, Comprehensive characterization, annotation and innovative
+## use of Infinium DNA Methylation BeadChip probes, Nucleic Acids Research 2017
+## http://zwdzwd.github.io/InfiniumAnnotation
+## File listed under: Plain Text Files (tab-delimited) -
+## Basic hg38 annotation with suggested overall masking (MASK_general column) - hm27
+
 file_url <- 'https://zwdzwd.s3.amazonaws.com/InfiniumAnnotation/20180909/HM27/HM27.hg38.manifest.tsv.gz'
 
 ## Define location of the manifest file in the data-raw folder:

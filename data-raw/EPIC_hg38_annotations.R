@@ -1,5 +1,5 @@
 ## Get url for the manifest file:
-file_url <- 'https://zwdzwd.s3.amazonaws.com/InfiniumAnnotation/20180909/epic/epic.hg38.manifest.tsv.gz'
+file_url <- 'https://zwdzwd.s3.amazonaws.com/InfiniumAnnotation/20180909/EPIC/EPIC.hg38.manifest.tsv.gz'
 
 ## Define location of the manifest file in the data-raw folder:
 manifest_file_location <- paste(
