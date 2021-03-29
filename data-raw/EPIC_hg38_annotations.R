@@ -1,4 +1,13 @@
-## Get url for the manifest file:
+## Code to prepare 'epic_hg38_annotations' dataset:
+
+## Annotations come from:
+## Zhou W, Laird PW and Shen H, Comprehensive characterization, annotation and innovative
+## use of Infinium DNA Methylation BeadChip probes, Nucleic Acids Research 2017
+## http://zwdzwd.github.io/InfiniumAnnotation
+## File listed under: Plain Text Files (tab-delimited) -
+## Basic hg38 annotation with suggested overall masking (MASK_general column) - EPIC
+
+## Set the file location for the hg38 manifest online:
 file_url <- 'https://zwdzwd.s3.amazonaws.com/InfiniumAnnotation/20180909/EPIC/EPIC.hg38.manifest.tsv.gz'
 
 ## Define location of the manifest file in the data-raw folder:

@@ -75,6 +75,6 @@ A data frame with 485577 rows and 59 variables:
 hm450_hg38_annotations
 }
 \description{
-Human genome hg38 annotations for probes on the hm450 array from: “Comprehensive characterization, annotation and innovative use of Infinium DNA Methylation BeadChip probes”
+Human genome hg38 annotations for probes on the HM450 array from: “Comprehensive characterization, annotation and innovative use of Infinium DNA Methylation BeadChip probes”
 }
 \keyword{datasets}

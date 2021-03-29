@@ -5,8 +5,9 @@
 ## use of Infinium DNA Methylation BeadChip probes, Nucleic Acids Research 2017
 ## http://zwdzwd.github.io/InfiniumAnnotation
 ## File listed under: Plain Text Files (tab-delimited) -
-## Basic hg38 annotation with suggested overall masking (MASK_general column) - hm27
+## Basic hg38 annotation with suggested overall masking (MASK_general column) - HM27
 
+## Set the file location for the hg38 manifest online:
 file_url <- 'https://zwdzwd.s3.amazonaws.com/InfiniumAnnotation/20180909/HM27/HM27.hg38.manifest.tsv.gz'
 
 ## Define location of the manifest file in the data-raw folder:
